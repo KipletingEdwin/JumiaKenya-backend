@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+    skip_forgery_protection
 
     def index 
         comment = Comment.all
@@ -24,13 +25,13 @@ class CommentsController < ApplicationController
     def destroy
         comment = find_comment
         comment.destroy
-        head: no_content
+        head :no_content
     end
 
     private
 
     def comment_params
-        params.permit(:commenter, :body)
+        params.require(:comment).permit(:commenter, :body)
     end
 
     def find_comment
