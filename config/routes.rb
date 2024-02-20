@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
+
+  post'/login', to: 'auth#create'
   
 end

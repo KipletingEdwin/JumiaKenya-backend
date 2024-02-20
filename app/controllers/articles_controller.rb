@@ -42,7 +42,7 @@ class ArticlesController < ApplicationController
   end
 
   def render_unprocessable_entity_response(exception)
-    render json: {errors: exception.record.errors.full_messags }, status: :unprocessable_entity
+    render json: {errors: exception.record.errors.full_messages }, status: :unprocessable_entity
   end
 
 end
