@@ -25,6 +25,9 @@ gem 'active_model_serializers'
 
 gem 'jwt'
 
+gem 'bcrypt', '~> 3.1.7'
+
+
 
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]

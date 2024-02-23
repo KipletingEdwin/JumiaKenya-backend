@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    # skip_before_action :authorized, only: [:create]
+    skip_before_action :authorized, only: [:create]
     skip_forgery_protection
 
     def profile
@@ -12,6 +12,8 @@ class UsersController < ApplicationController
     end
 
     def create
+        Rails.logger.debug "Received parameters: #{params.inspect}" # Log received parameters
+
         @user = User.create(user_params)
         if @user.valid?
             @token = encode_token({user_id: @user.id})
@@ -25,7 +27,7 @@ class UsersController < ApplicationController
 
 
     def user_params
-        params.require(:user).permit(:name, :username, :email, :password, :password_confirmation)
+        params.permit(:name, :username, :email, :password, :password_confirmation)
     end
 
 

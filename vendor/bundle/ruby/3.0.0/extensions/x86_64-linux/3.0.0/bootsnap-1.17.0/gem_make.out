@@ -1,0 +1,15 @@
+current directory: /home/edwin/edwin/jumiakenyabackend/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.17.0/ext/bootsnap
+/usr/bin/ruby3.0 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20240220-18218-vmu26v.rb extconf.rb
+creating Makefile
+
+current directory: /home/edwin/edwin/jumiakenyabackend/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.17.0/ext/bootsnap
+make DESTDIR\= clean
+
+current directory: /home/edwin/edwin/jumiakenyabackend/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.17.0/ext/bootsnap
+make DESTDIR\=
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+
+current directory: /home/edwin/edwin/jumiakenyabackend/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.17.0/ext/bootsnap
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20240220-18218-g9h7ml/bootsnap

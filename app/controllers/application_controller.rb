@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-    # before_action :authorized
+    before_action :authorized
+    skip_before_action :verify_authenticity_token
   
     def encode_token(payload)
       # should store secret in env variable
@@ -33,9 +34,11 @@ class ApplicationController < ActionController::Base
     def logged_in?
       !!current_user
     end
-  
+
     def authorized
       render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
     end
+
+
   end
   
