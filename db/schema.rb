@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_28_193112) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_01_054640) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -29,7 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_28_193112) do
 
   create_table "people", force: :cascade do |t|
     t.string "name"
-    t.string "image_url"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

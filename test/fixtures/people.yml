@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  image_url: MyString
+  image: MyString
 
 two:
   name: MyString
-  image_url: MyString
+  image: MyString

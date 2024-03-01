@@ -5,7 +5,7 @@ class PeopleController < ApplicationController
     end
   
     def show
-      person = find_person  # Corrected from fine_person
+      person = find_person
       render json: person
     end
   
@@ -22,17 +22,23 @@ class PeopleController < ApplicationController
     end
   
     def create
-      person = Person.create(person_params)
-      render json: person, status: :created
+      puts "Received parameters: #{params.inspect}"
+  
+      person = Person.new(person_params)
+      if person.save
+        render json: person, status: :created
+      else
+        render json: { error: person.errors.full_messages }, status: :unprocessable_entity
+      end
     end
   
     private
   
     def person_params
-      params.permit(:name, :image_url)
+      params.permit(:name, :image) 
     end
   
-    def find_person  
+    def find_person
       Person.find(params[:id])
     end
   end
